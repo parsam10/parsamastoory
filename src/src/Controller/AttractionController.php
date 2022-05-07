@@ -50,9 +50,7 @@ class AttractionController extends AbstractController
         return new Response('attractions names:' . $result);
     }
 
-    /**
-     * @Route("/attraction/edit/{id}")
-     */
+    #[Route("/attraction/edit/{id}", name: "edit_attraction")]
     public function update(ManagerRegistry $doctrine, int $id): Response
     {
         $entityManager = $doctrine->getManager();
